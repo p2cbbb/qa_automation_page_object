@@ -1,1 +1,1 @@
-# qa_automation_page_object
+### Автоматизация тестирования с помощью Selenium и Python. Page Object Pattern
