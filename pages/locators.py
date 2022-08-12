@@ -9,6 +9,7 @@ class LoginPageLocators():
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
 
 class ProductPageLocators():
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.alert:nth-child(1)')
     ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, ".btn-add-to-basket")
     ITEM_NAME = (By.CSS_SELECTOR, ".product_main > h1")
     ALERT_ITEM_NAME = (By.CSS_SELECTOR, ".alert:nth-child(1) > .alertinner > strong")
