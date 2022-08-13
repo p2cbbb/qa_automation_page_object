@@ -1,4 +1,5 @@
 import math
+from .locators import BasePageLocators
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,6 +16,10 @@ class BasePage():
     def open(self):
         return self.browser.get(self.url)
 
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        link.click()
+        assert "login" in self.browser.current_url, "This is not login url"
 
     def is_element_present(self, how, what):
         try:
@@ -39,6 +44,9 @@ class BasePage():
             return False
 
         return True
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
