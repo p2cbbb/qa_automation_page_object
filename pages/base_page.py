@@ -21,6 +21,11 @@ class BasePage():
         link.click()
         assert "login" in self.browser.current_url, "This is not login url"
 
+    def go_to_basket_page(self):
+        link = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
+        link.click()
+        assert "basket" in self.browser.current_url, "This is not basket url"
+
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
